@@ -57,3 +57,8 @@ vim-trailing-whitespace
 vim-vividchalk
 vundle
 YouCompleteMe
+wlangstroth/vim-racket
+
+c.vim {
+    use for c application program
+}
