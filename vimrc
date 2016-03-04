@@ -540,7 +540,7 @@ endif
 " nnoremap <leader>a :Ack
 " use ag.vim replace ack.vim
 " ag tool : sudo apt-get install silversearcher-ag
-" let g:ackprg = 'ag --nogroup --color --column'
+let g:ackprg = 'ag --nogroup --color --column'
 if executable('ag')
 	let g:ackprg = 'ag --vimgrep --color --column'
 endif
