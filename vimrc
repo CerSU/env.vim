@@ -145,7 +145,7 @@ if has("cscope")
            let cscope_file=findfile("GTAGS", ".;")
            let cscope_pre=matchstr(cscope_file, ".*/")
            if !empty(cscope_file) && filereadable(cscope_file)
-                exe "cs add" cscope_file
+               exe "silent cs add" cscope_file
            endif
         endif
 endif
