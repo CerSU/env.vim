@@ -42,6 +42,8 @@ set matchtime=2                                                   " show matchin
 " set relativenumber
 set autoread                                                      "if file modifiable auto load
 set cul
+set ffs=unix
+set ff=unix
 
 scriptencoding utf-8
 
@@ -63,7 +65,7 @@ set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
 " set textwidth=79
 " set smarttab
-set expandtab       " expand tab to space
+" set expandtab       " expand tab to space
 
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -282,8 +284,12 @@ let NERDCompactSexyComs=1
 "=============== BEGIN airline settings =========================
 " airline replace powerline
 let g:Powerline_symbols = 'unicode'
-" let g:Powerline_colorscheme = 'solarized256'
-" let g:Powerline_symbols = 'fancy'
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_detect_iminsert=0
+let g:airline_powerline_fonts=0
+let g:Powerline_colorscheme = 'solarized256'
+let g:Powerline_symbols = 'fancy'
 "=============== BEGIN airline settings =========================
 
 
@@ -457,7 +463,7 @@ endfunction
 
 nmap <F7> :call Runshell("Generate tags","ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .")<cr>
 " nmap <F8> :call Runshell("Generate cscope","cscope -Rbk")<cr>:cs reset<cr><cr>
-nmap <F8> :call Runshell("Generate gtags-cscope","global -u")<cr>:cs reset<cr><cr>: echo "globl update done ..." <cr>
+nmap <F6> :call Runshell("Generate gtags-cscope","global -u")<cr>:cs reset<cr><cr>: echo "globl update done ..." <cr>
 
 
 " ### easier navigation between split windows ###
@@ -547,23 +553,23 @@ endif
 "=============== BEGIN ag.vim settings ===========================
 
 
-function! s:RunShellCommand(cmdline)
-    " botright new
-    setlocal buftype=nofile
-    setlocal bufhidden=delete
-    setlocal nobuflisted
-    setlocal noswapfile
-    setlocal nowrap
-    setlocal filetype=shell
-    setlocal syntax=shell
-
-    call setline(1, a:cmdline)
-    call setline(2, substitute(a:cmdline, '.', '=', 'g'))
-    execute 'silent $read !' . escape(a:cmdline, '%#')
-    setlocal nomodifiable
-endfunction
-
-command! -complete=file -nargs=+ Shell call s:RunShellCommand(<q-args>)
+"function! s:RunShellCommand(cmdline)
+"    " botright new
+"    setlocal buftype=nofile
+"    setlocal bufhidden=delete
+"    setlocal nobuflisted
+"    setlocal noswapfile
+"    setlocal nowrap
+"    setlocal filetype=shell
+"    setlocal syntax=shell
+"
+"    call setline(1, a:cmdline)
+"    call setline(2, substitute(a:cmdline, '.', '=', 'g'))
+"    execute 'silent $read !' . escape(a:cmdline, '%#')
+"    setlocal nomodifiable
+"endfunction
+"
+"command! -complete=file -nargs=+ Shell call s:RunShellCommand(<q-args>)
 
 "======================== END script =============================
 
