@@ -41,6 +41,7 @@ set matchtime=2                                                   " show matchin
 " set matchpairs+=<:>                                             " specially for html
 " set relativenumber
 set autoread                                                      "if file modifiable auto load
+set autowrite
 set cul
 set ffs=unix
 set ff=unix
@@ -77,8 +78,6 @@ autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 tex
 
 
 "=================================================================
-
-
 
 
 "=================================================================
@@ -408,9 +407,12 @@ set completeopt+=preview,menu,longest
 
 
 " ### BEGIN Supertab settings ####
-" let g:SuperTabDefultCompletionType='context'
+let g:SuperTabDefaultCompletionType='context'
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 let g:SuperTabRetainCompletionType=2
+let g:SuperTabMappingForward = '<s-tab>'  "shit tab to complete
+let g:SuperTabMappingBackward = '<s-c-tab>'
+let g:SuperTabMappingTabLiteral = '<tab>' "inset real table
 
 "#### END Supertab settings ####
 "=============== END code Complete settings ======================
