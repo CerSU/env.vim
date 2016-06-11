@@ -57,6 +57,10 @@ vmap <C-c> "+y
 "======= end ctrl+c =====
 
 
+if exists('$TMUX')
+	set term=screen-256color
+endif
+
 
 " Default Indentation
 set autoindent
@@ -84,9 +88,9 @@ autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 tex
 " VIM color scheme settings
 "======================== BEGIN ==================================
 set background=dark
-color fisa
+" color fisa
 " color solarized
-" color Tomorrow-Night-Eighties
+color Tomorrow-Night-Eighties
 " color Tomorrow-Night
 " color Tomorrow-Night-Bright
 " color Tomorrow-Night-Blue
