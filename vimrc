@@ -10,6 +10,9 @@ set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 filetype plugin indent on
 syntax on   "enable syntax hightlight and completion
 
+
+"add system cipboard
+set clipboard=unnamed
 " search
 set incsearch
 "set highlight 	" conflict with highlight current line
